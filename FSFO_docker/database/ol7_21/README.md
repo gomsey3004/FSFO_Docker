@@ -19,15 +19,14 @@ $ tree
 $
 ```
 Build:
-
+```
 Go to docker directory:
 
 cd dockerfiles/database/ol7_21
-
 docker build --no-cache -t ol7_21:latest .
-
+```
 Run:
-
+```
 docker run -dit --rm --name ol7_21_con \
 --shm-size="1G" \
 -e "PRIMARY_HOST=<Primary Database Host IP>" \
@@ -38,8 +37,9 @@ docker run -dit --rm --name ol7_21_con \
 -e "STANDBY_DB_SVC=<Standby Database service name>" \
 -e "SYS_PASSWORD=<Sys Password>" \
 ol7_21:latest
-    
+```    
     
 Check Logs:
-    
+```    
 docker logs --follow ol7_21_con
+```
