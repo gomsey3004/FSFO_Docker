@@ -19,16 +19,20 @@ $ tree
 $
 ```
 Build:
-
+```
 Go to docker directory:
 
-cd dockerfiles/database/ol7_121
+$ cd dockerfiles/database/ol7_121
+$ docker build --no-cache -t ol7_121:latest .
 
-docker build --no-cache -t ol7_121:latest .
+
+```
 
 Run:
 
-docker run -dit --rm --name ol7_121_con \
+```
+
+$ docker run -dit --rm --name ol7_121_con \
 --shm-size="1G" \
 -e "PRIMARY_HOST=<Primary Database Host IP>" \
 -e "PRIMARY_DB_PORT=<DB Port>" \
@@ -38,8 +42,10 @@ docker run -dit --rm --name ol7_121_con \
 -e "STANDBY_DB_SVC=<Standby Database service name>" \
 -e "SYS_PASSWORD=<Sys Password>" \
 ol7_121:latest
-    
+ 
+```
     
 Check Logs:
-    
-docker logs --follow ol7_121_con
+```
+$ docker logs --follow ol7_121_con
+```
